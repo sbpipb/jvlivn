@@ -20,6 +20,9 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
   database: jvlivn_production
   username: jvlivn
   password: <%= ENV['JVLIVN_DATABASE_PASSWORD'] %>
+  pool: 5
+  encoding: unicode
