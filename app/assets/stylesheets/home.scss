@@ -7,6 +7,27 @@ body {
 }
 
 .headline {
+  .avatar {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 0;
+    padding-bottom: 100%;
+    position:relative;
+    width: 100%;
+    background-image: url(asset_path('hike.jpg'))
+  }
+
+  .rounded-circle {
+    border-radius: 50%;
+  }
+
+  .img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
   .title {
     text-transform: uppercase;
     color: $brand-2;
