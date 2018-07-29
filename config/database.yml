@@ -12,7 +12,7 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: jvlivn_development
 
 test:
   <<: *default
