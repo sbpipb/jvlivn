@@ -6,16 +6,24 @@
 }
 
 .social {
+  line-height: 1;
+  padding: 24px;
+
   > .social-link {
     margin: auto 24px;
     height: 48px;
     > i {
-      font-size: 24px;
+      font-size: 16px;
       color: $white;
     }
   }
 
+  .fa {
+    transition: transform .2s; /* Animation */
+  }
+
   .fa:hover {
       color: $brand-2;
+      transform: scale(1.5);
   }
 }
