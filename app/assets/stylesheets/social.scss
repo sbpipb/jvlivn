@@ -19,11 +19,11 @@
   }
 
   .fa {
-    transition: transform .2s; /* Animation */
+    transition: transform .3s; /* Animation */
   }
 
   .fa:hover {
       color: $brand-2;
-      transform: scale(1.5);
+      transform: scale(2);
   }
 }
