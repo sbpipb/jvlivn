@@ -4,4 +4,6 @@ class HomeController < ApplicationController
   def blog; end
 
   def portofolio; end
+
+  def spotify; end
 end
