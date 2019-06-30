@@ -6,6 +6,10 @@ body {
   font-family: $montserrat !important;
 }
 
+.container {
+  min-height: 90vh;
+}
+
 .headline {
   .avatar {
     background-position: center top;
