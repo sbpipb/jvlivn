@@ -7,6 +7,13 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
+  - name: List Gems
+    task:
+      jobs:
+        - name: Runs list
+          commands: 
+            - gem list
+blocks:
   - name: Ruby example
     task:
       jobs:
