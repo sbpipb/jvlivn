@@ -13,7 +13,6 @@ blocks:
         - name: Runs list
           commands: 
             - gem list
-blocks:
   - name: Ruby example
     task:
       jobs:
