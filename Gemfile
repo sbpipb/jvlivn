@@ -67,3 +67,5 @@ gem "haml", "~> 5.0"
 
 gem 'bootstrap'
 gem 'jquery-rails'
+
+gem "webpacker", "~> 5.1"
