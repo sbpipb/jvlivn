@@ -6,9 +6,12 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
+  url: <%= ENV['DATABASE_URL'] %>
+  host: <%= ENV['SKIPPR_DATABASE_HOST'] || 'localhost' %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  username: postgres
+  password: postgres
 
 development:
   <<: *default
@@ -20,9 +23,7 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
   database: jvlivn_production
   username: jvlivn
   password: <%= ENV['JVLIVN_DATABASE_PASSWORD'] %>
-  pool: 5
   encoding: unicode

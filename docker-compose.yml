@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+    command: ./bin/rails server -b 0.0.0.0
+    environment:
+      - HOST=0.0.0.0
+      - LIVE_RELOAD=false
+      - DATABASE_PASSWORD=password
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+      - bundle_cache:/usr/local/bundle
+
+  db:
+    image: postgres:11-alpine
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      POSTGRES_PASSWORD: postgres
+      PGPASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+volumes:
+  bundle_cache:
+  pgdata:

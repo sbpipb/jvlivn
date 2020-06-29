@@ -1,3 +1,4 @@
+# typed: strict
 Rails.application.routes.draw do
   root 'home#index'
   get 'blog', to: 'home#blog', as: 'blog'
