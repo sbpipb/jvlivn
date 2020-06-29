@@ -1,0 +1,33 @@
+version: v1.0
+name: Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Setup
+    task:
+      jobs:
+        - name: Bundle Install
+          commands:
+            - checkout
+            - sem-version ruby 2.5.5
+            - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock)
+            - bundle install --path ./vendor/bundle
+            - cache delete gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock)
+            - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) ./vendor/bundle
+  - name: Linting
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version ruby 2.5.5
+          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock)
+          - bundle install --path ./vendor/bundle
+      jobs:
+        - name: Rubocop
+          commands:
+            - bundle list
+        - name: Sorbet
+          commands:
+            - bundle exec srb tc
