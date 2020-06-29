@@ -1,2 +1,15 @@
+inherit_from: .rubocop_todo.yml
+
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Rails:
+  Enabled: true
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'db/*'
+    - 'bin/*'
+  TargetRubyVersion: 2.5.5
