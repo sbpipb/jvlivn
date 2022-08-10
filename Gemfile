@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.0'
 # Use sqlite3 as the database for Active Record
 gem 'puma', '~> 3.12'
 gem 'pg'
@@ -63,7 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem "font-awesome-rails", "~> 4.7"
+gem "font-awesome-rails"
 gem "rubocop", "~> 0.58.2"
 gem "haml", "~> 5.0"
 
