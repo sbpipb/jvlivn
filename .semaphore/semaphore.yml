@@ -1,7 +1,7 @@
 # For more Ruby information and examples, see
 # https://docs.semaphoreci.com/article/73-ruby
 version: v1.0
-name: Hello Semaphore
+name: Build Pipeline
 agent:
   machine:
     type: e1-standard-2
@@ -11,7 +11,7 @@ blocks:
     task:
       jobs:
         - name: Runs list
-          commands: 
+          commands:
             - gem list
   - name: Ruby example
     task:
@@ -22,3 +22,6 @@ blocks:
             # Uncomment the following line to pull your code,
             # then proceed by adding your custom commands:
             #- checkout
+promotions:
+  - name: Deploy to Heroku
+    pipeline_file: heroku.yml
